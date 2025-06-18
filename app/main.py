@@ -25,6 +25,7 @@ async def create_task(task: NewTask):
         "description": task.description,
         "status": task.status,
         "priority": task.priority,
+        "category": task.category,
         "due_date": task.due_date,
         "created_at": datetime.now().isoformat(),  # Example date
         "completed_at": None,  # Initially None
@@ -35,6 +36,7 @@ async def create_task(task: NewTask):
 
 # TODO: implement update task, delete task, and get all tasks
 # TODO: when delete, update or get task, check if task exists
-# TODO: implement normal db so that crud operation will occur using a function in the db
 # TODO: write tests for each crud operation in the tasks category
 # TODO: implement a router for tasks
+
+# TODO:
