@@ -18,7 +18,9 @@ create task using post request to [create task](http://127.0.0.1:8000/tasks/) wi
     "description": "wash the beshari dishes left in the sink",
     "status": "Pending",
     "priority": null,
+    "category": "Routine Maintenance",
     "due_date": null,
-    "assigned_to": null
+    "partner_id": null
 }
-```
+```  
+only title and status must appear
