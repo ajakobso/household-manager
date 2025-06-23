@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Path, HTTPException
-from schemas.tasks_schema import BaseTask, Status
+from schemas.tasks_schema import TaskCreate, TaskUpdate, Status
 from datetime import datetime
 from typing import Annotated
 from json import loads
@@ -30,7 +30,7 @@ async def read_task(task_id: UUID):
    
 
 @app.post("/tasks/")
-async def create_task(task: BaseTask):
+async def create_task(task: TaskCreate):
     new_task_id = uuid4()
     new_task = {
         "task_id": new_task_id,
@@ -51,7 +51,7 @@ async def create_task(task: BaseTask):
     )
 
 @app.put("/tasks/{task_id}")
-async def update_task(task_id: UUID, task: BaseTask):
+async def update_task(task_id: UUID, task: TaskUpdate):
     if task_id not in tasks:
         raise HTTPException(
         status_code=404,
